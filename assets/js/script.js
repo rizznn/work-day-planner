@@ -29,9 +29,13 @@ $('.saveBtn').on('click', function() {
     localStorage.setItem(time, value);
 });
 
+    // hour updating function
+    function timeAudit() {
+        // store current time in a variable
+        var momentNow = moment().hour();
+    }
 
-// hour updating function
-// store current time in a variable
+    
 // loop through the different times
 // variable that trims and then resulting the hour
 // using an if statement, compare the time of the variable to the time of the div
