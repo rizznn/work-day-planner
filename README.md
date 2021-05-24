@@ -14,5 +14,5 @@ This website is created with Visual Studio Code using html, css and JavaScript. 
 
 
 ## Link to deployed application
-
+https://rizznn.github.io/work-day-planner/
 
