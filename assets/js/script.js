@@ -1,7 +1,7 @@
 // var plan = {};
 // var task = document.querySelector("#task");
-var saveBtn = document.querySelectorAll(".saveBtn")
-var description = document.querySelectorAll(".description");
+
+var description = $(".description");
 var contain = document.querySelectorAll(".contain");
 var today = moment().format('dddd, MMMM Do YYYY')
 $("#currentDay").html(today);
@@ -16,11 +16,25 @@ $("#currentDay").html(today);
 //     contain.append(taskPlan);
 // }
 
-$(saveBtn).on("click", "description", function() {
-    var taskText = $(this).val();
-    // var time = $(contain).attr("id");
+$('.saveBtn').on('click', function() {
+    
+    var value = $(this)
+      .siblings('.description')
+      .val();
 
-    // localStorage.setItem(time, taskText);
-
-    console.log(taskText);
+    var time = $(this)
+        .parent()
+        .attr("id");
+    // set both variables to localStorage
+    localStorage.setItem(time, value);
 });
+
+
+// hour updating function
+// store current time in a variable
+// loop through the different times
+// variable that trims and then resulting the hour
+// using an if statement, compare the time of the variable to the time of the div
+// write 3 css possibilities: past, present and future and apply possiblities depending on the outcome
+
+// using the localStorage get values and place them in the planner
