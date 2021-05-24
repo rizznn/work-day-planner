@@ -1,26 +1,26 @@
-var plan = {};
+// var plan = {};
 // var task = document.querySelector("#task");
-var saveBtn = document.querySelector(".saveBtn")
-// // create event in the textarea
+var saveBtn = document.querySelectorAll(".saveBtn")
+var description = document.querySelectorAll(".description");
+var contain = document.querySelectorAll(".contain");
+var today = moment().format('dddd, MMMM Do YYYY')
+$("#currentDay").html(today);
+// create event in the textarea
 // var createPlan = function(toDoText){
-
+//     var contain = $("<div>").addClass("listItem");
+//     var taskPlan = $("<p>")
+//       .addClass("")
+//       .text(taskText);
+  
+//     // append p
+//     contain.append(taskPlan);
 // }
 
-// saveBtn.addEventListener("click", function(){
-//     alert("The button was clicked.");
-// });
+$(saveBtn).on("click", "description", function() {
+    var taskText = $(this).val();
+    // var time = $(contain).attr("id");
 
-$(saveBtn).click(function(event) {
-    event.preventDefault();
-    // var taskText = $("#task").val();
+    // localStorage.setItem(time, taskText);
 
-    // createPlan(taskText, "task")
-
-    // save();
-    console.log("save");
+    console.log(taskText);
 });
-
-// var save = function() {
-//     localStorage.setItem("plan", JSON.stringify(plan));
-//     console.log(save);
-// };
