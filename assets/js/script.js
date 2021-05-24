@@ -29,16 +29,35 @@ $('.saveBtn').on('click', function() {
     localStorage.setItem(time, value);
 });
 
-    // hour updating function
-    function timeAudit() {
-        // store current time in a variable
-        var momentNow = moment().hour();
-    }
+// hour updating function
+function timeAudit() {
+    // store current time in a variable
+    var momentNow = moment().hour();
 
-    
-// loop through the different times
-// variable that trims and then resulting the hour
-// using an if statement, compare the time of the variable to the time of the div
-// write 3 css possibilities: past, present and future and apply possiblities depending on the outcome
+    // loop through the different times
+    $(".time-block").each(function () {
+        // variable that trims and then resulting the hour
+        var block = parseInt($(this).attr("id").split("hour")[1]);
+
+        // using an if statement, compare the time of the variable to the time of the div
+        if (block < momentNow) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (block === momentNow) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+    });
+};
+
 
 // using the localStorage get values and place them in the planner
